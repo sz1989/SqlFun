@@ -61,6 +61,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Scripts\ScriptsIgnoredOnImport.sql" />
+    <None Include="Scripts\CifgLoad.sql" />
+    <None Include="Scripts\SMKT.sql" />
+    <None Include="Scripts\Temporal.sql" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Scripts\Script1.sql" />
