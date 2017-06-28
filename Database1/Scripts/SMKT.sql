@@ -19,6 +19,11 @@ order by 2 desc
 select distinct(user_id)
 from ms_ee_queue
 where user_id like 'agl\%'
+
+-- a way to find TMC trade
+select *
+from ms_ee_queue
+where user_id like 'agl\app_tmc_service%' 
 */
 
 /* SMKT Security related query

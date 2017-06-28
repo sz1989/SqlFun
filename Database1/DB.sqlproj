@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <Name>Database1</Name>
+    <Name>DB</Name>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
     <ProjectGuid>{0e6bf282-9d65-4052-a825-ff043215eef1}</ProjectGuid>
@@ -64,10 +64,13 @@
     <None Include="Scripts\CifgLoad.sql" />
     <None Include="Scripts\SMKT.sql" />
     <None Include="Scripts\Temporal.sql" />
+    <None Include="Scripts\SecurityRelated.sql" />
+    <None Include="Scripts\AddUser.sql" />
+    <None Include="Scripts\Script1.sql" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="Scripts\Script1.sql" />
     <None Include="Scripts\Json.sql" />
     <None Include="Scripts\PipeRelated.sql" />
+    <None Include="Scripts\CommaSeparated.sql" />
   </ItemGroup>
 </Project>
