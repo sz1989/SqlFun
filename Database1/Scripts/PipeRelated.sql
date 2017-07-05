@@ -20,6 +20,26 @@ select policy_id from policy where etl_abob = 1
 */
 
 /*
+
+select *
+from CalculatorHist
+where CalculatorType = 1
+and CreateDate >= '7/1/17' and CreateDate < '7/5/17'
+and UserId = 'AGL\APP_SQL_PIPE_ETL_P'
+--and error is not null
+order by CreateDate desc
+
+select CONVERT(DATE, CreateDate), count(1)
+from CalculatorHist
+where 
+CalculatorType = 1
+and UserId = 'AGL\APP_SQL_PIPE_ETL_P'
+group by CONVERT(DATE, CreateDate)
+order by 1 desc
+
+*/
+
+/*
 Declare @execution_id bigint
 EXEC [SSISDB].[catalog].[create_execution] @package_name=N'PipeAllDirty.dtsx', @execution_id=@execution_id OUTPUT, @folder_name=N'Pipe', @project_name=N'Ag.PipeService', @use32bitruntime=False, @reference_id=Null
 Select @execution_id
