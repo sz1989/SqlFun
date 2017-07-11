@@ -67,6 +67,7 @@
     <None Include="Scripts\SecurityRelated.sql" />
     <None Include="Scripts\AddUser.sql" />
     <None Include="Scripts\Script1.sql" />
+    <None Include="Scripts\BulkDeletes.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Scripts\Json.sql" />

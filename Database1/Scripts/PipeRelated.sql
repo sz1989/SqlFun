@@ -6,7 +6,7 @@ where
 event_name = 'OnError' 
 and message not like '%policy closed%'
 and package_name in ('PipeAllDirty.dtsx', 'LoadPipePartition.dtsx', 'LoadPipe.dtsx', 'UpdateETL.dtsx','ETLToOracle.dtsx')
-and message_time >= '6/15/2017'
+and message_time >= '7/8/2017'
 order by message_time desc
 
 
