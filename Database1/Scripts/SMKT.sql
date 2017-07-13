@@ -1,10 +1,14 @@
-﻿SELECT count(s.ad_user) 
+﻿SELECT DISTINCT(user_logid) FROM security_access a, permissions p, user_roles_ad_vw v WHERE a.app_name = p.programs and a.access_level = p.access_level and p.id in (v.role_1, v.role_2, v.role_3, v.role_4) and a.app_name='smkt' and a.object_path='w_smkt_endors.m_smkt_endors.m_edit.m_update'
+
+/*
+SELECT count(s.ad_user) 
 FROM security_access a, permissions p, user_roles_ad_vw v, user_group_staff_vw s 
 WHERE a.app_name = p.programs and a.access_level = p.access_level and p.id in (v.role_1, v.role_2, v.role_3, v.role_4) 
 and s.ad_group = v.user_logid 
 and a.app_name='smkt' 
 and s.ad_user='dka' 
 and a.object_path='w_smkt_endors.m_smkt_endors.m_edit.m_update'
+*/
 
 /* SMKT Queue related 
 select *
@@ -24,6 +28,14 @@ where user_id like 'agl\%'
 select *
 from ms_ee_queue
 where user_id like 'agl\app_tmc_service%' 
+
+P	Cusip			Execute UpdatePrice stored procedure in Sybase cusip_db Read price from Sybase cusip_db  tmc_price_capacity_all_file table where cusip equals id (Cusip) (FixHandler) 
+					if DB does not contain that data then do not send message to TMC
+K	Risk # (in integer)	Execute UpdatePrice stored procedure in Sybase cusip_db Read price from Sybase cusip_db tmc_price_capacity_all_file table where obligor_id equals Risk (FixHandler)
+					if DB does not contain that data then do not send message to TMC
+T	Policy# 		EEngine GetSmRequestRecordsForPolicy PublishDocumentToEDMS SendEmailNotificationToDesk
+D	Policy#			SendDealerLetterForDeskTrade: GetSmRequestRecordForPolicy then GetLegalData (invoking ee_validate_trade) then CreateLegalDoc and send to users
+
 */
 
 /* SMKT Security related query
