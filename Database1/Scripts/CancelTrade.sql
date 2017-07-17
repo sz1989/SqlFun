@@ -2,16 +2,9 @@ select ee_status_reason_cd, comment, ee_correlation_id, ee_order_id, ee_action,e
 from sm_request
 where
  --req_id = 23747
-revised_dt >= '7/13/2017'
+revised_dt >= '7/14/2017'
 --and 
 --req_init_flg = 'T'
-
-select req_id, revised_dt, revised_by, orig_cusip,comment,req_status
-from sm_request
-where
-req_id = 23749
-and
-revised_dt >= '7/13/2017'
 
 select req_status, *
 from sm_request for system_time all
@@ -23,9 +16,9 @@ select *
 from enum_code
 where field_name = 'ee_reason_code'
 
-exec ee_request '28582227', '01', '1','B',1,'F',1500,'83710DBK3','19000101',231,3.21,'5197-5023000262-assureg1'  -- new trade
+--exec ee_request '28582227', '01', '1','B',1,'F',1500,'83710DBK3','19000101',231,3.21,'5197-5023000262-assureg1'  -- new trade
 --exec ee_insure 23818
-exec ee_request '28582227', '01', '1','B',9,'C',1500,'83710DBK3','19000101',0,0,'5197-5023000262-assureg1'  -- cancel trade 
+--exec ee_request '28582227', '01', '1','B',9,'C',1500,'83710DBK3','19000101',0,0,'5197-5023000262-assureg1'  -- cancel trade 
 
 -- ALTER TABLE sm_request enable TRIGGER trg_idu_sm_request
 -- update sm_request set req_status = 'F' where req_id = 23737
@@ -118,11 +111,6 @@ select office_loc, r.*
 	from risk r, risk_cap_chrg_vw b
    where     r.risk_no = 304530
          and r.risk_no = b.risk_no 
-
---select *
---from cusip_db.dbo.tmc_email_config 
-
---from User_Notification
 
 select *
 from sm_ext for system_time all

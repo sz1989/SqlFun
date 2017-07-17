@@ -1,4 +1,5 @@
-﻿UPDATE history.pf_issue_maturities 
+﻿/*
+UPDATE history.pf_issue_maturities 
 SET SysStartTime = DATEADD(hh,CASE WHEN SysStartTime >= dbo.GetDstStart(YEAR(SysStartTime)) AND SysStartTime < dbo.GetDstEnd(YEAR(SysStartTime)) THEN 4 ELSE 5 END,SysStartTime)
 ,SysEndTime = DATEADD(hh,CASE WHEN SysEndTime >= dbo.GetDstStart(YEAR(SysEndTime)) AND SysEndTime < dbo.GetDstEnd(YEAR(SysEndTime)) THEN 4 ELSE 5 END,SysEndTime);
 go
@@ -232,3 +233,4 @@ go
 
 ALTER TABLE dbo.pf_entity_risk SET (SYSTEM_VERSIONING = ON (HISTORY_TABLE = history.pf_entity_risk, DATA_CONSISTENCY_CHECK=ON));
 go
+*/
