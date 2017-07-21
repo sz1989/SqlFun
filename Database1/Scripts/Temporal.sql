@@ -1,4 +1,21 @@
-﻿/*
+﻿/* SQLs to find out temporal tables
+SELECT code = '<Package Name="' + t2.name +'" ConstraintMode="Linear">
+<Tasks><Dataflow Name="Copy Data"><Transformations>
+<OleDbSource Name="Get Data" ConnectionName="Src"><DirectInput>SELECT * FROM ' + s.name + '.' + t2.name  + '</DirectInput></OleDbSource>
+<OleDbDestination Name="Insert Data" ConnectionName="Dest"><ExternalTableOutput Table="dbo.' + t2.name + '"></ExternalTableOutput></OleDbDestination>
+</Transformations></Dataflow></Tasks></Package>'
+FROM sys.tables t1 JOIN sys.tables t2 on t1.history_table_id = t2.object_id  
+JOIN sys.schemas s on t2.schema_id = s.schema_id  
+JOIN sys.periods p on p.object_id = t1.object_id  
+JOIN sys.columns c on p.end_column_id = c.column_id and c.object_id = t1.object_id  
+
+SELECT t2.name, s.name, c.name, '1/1/2017' as enddate   
+FROM sys.tables t1 JOIN sys.tables t2 on t1.history_table_id = t2.object_id  
+JOIN sys.schemas s on t2.schema_id = s.schema_id  
+JOIN sys.periods p on p.object_id = t1.object_id  
+JOIN sys.columns c on p.end_column_id = c.column_id and c.object_id = t1.object_id  
+*/
+/*
 UPDATE history.pf_issue_maturities 
 SET SysStartTime = DATEADD(hh,CASE WHEN SysStartTime >= dbo.GetDstStart(YEAR(SysStartTime)) AND SysStartTime < dbo.GetDstEnd(YEAR(SysStartTime)) THEN 4 ELSE 5 END,SysStartTime)
 ,SysEndTime = DATEADD(hh,CASE WHEN SysEndTime >= dbo.GetDstStart(YEAR(SysEndTime)) AND SysEndTime < dbo.GetDstEnd(YEAR(SysEndTime)) THEN 4 ELSE 5 END,SysEndTime);

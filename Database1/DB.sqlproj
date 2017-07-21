@@ -58,6 +58,7 @@
   <ItemGroup>
     <Folder Include="Properties" />
     <Folder Include="Scripts\" />
+    <Folder Include="Arch" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Scripts\ScriptsIgnoredOnImport.sql" />
@@ -69,6 +70,11 @@
     <None Include="Scripts\Script1.sql" />
     <None Include="Scripts\BulkDeletes.sql" />
     <None Include="Scripts\CoreLog.sql" />
+    <None Include="Scripts\Optimiza.sql" />
+    <None Include="Scripts\RiskArch.sql" />
+    <None Include="Arch\SmoTb.ps1" />
+    <None Include="Arch\Steps.txt" />
+    <None Include="Arch\tb.ps1" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Scripts\Json.sql" />

@@ -1,0 +1,3 @@
+Create a different file group other than PRIMARY. ex: Hist 
+
+Create partitions on new a file group
