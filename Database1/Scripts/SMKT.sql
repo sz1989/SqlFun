@@ -13,6 +13,7 @@ and a.object_path='w_smkt_endors.m_smkt_endors.m_edit.m_update'
 /* SMKT Queue related 
 select *
 from ms_ee_queue
+-- where queue_status = 0
 order by post_dt desc
 
 select convert(date, post_dt), count(1)

@@ -1,4 +1,21 @@
-﻿/* SQLs to find out temporal tables
+﻿/* SQLs to Alter tables
+ALTER TABLE dbo.stream_risk_free_rates SET (SYSTEM_VERSIONING = OFF); 
+go
+
+ALTER TABLE dbo.stream_risk_free_rates DROP PERIOD FOR SYSTEM_TIME;
+go
+
+UPDATE dbo.stream_risk_free_rates SET SysStartTime = das.dbo.ToUTC(SysStartTime);
+go
+
+ALTER TABLE dbo.stream_risk_free_rates ADD PERIOD FOR SYSTEM_TIME(sysstartTime, sysendtime);
+go
+
+ALTER TABLE dbo.stream_risk_free_rates SET (SYSTEM_VERSIONING = ON (HISTORY_TABLE=history.stream_risk_free_rates, DATA_CONSISTENCY_CHECK=ON));
+go
+*/
+
+/* SQLs to find out temporal tables
 SELECT code = '<Package Name="' + t2.name +'" ConstraintMode="Linear">
 <Tasks><Dataflow Name="Copy Data"><Transformations>
 <OleDbSource Name="Get Data" ConnectionName="Src"><DirectInput>SELECT * FROM ' + s.name + '.' + t2.name  + '</DirectInput></OleDbSource>
@@ -148,20 +165,7 @@ select a.*,(case when b.h_begin_date is null then getdate() else b.h_begin_date 
 from dbo.stream_risk_free_rates a left join (select stream_no, max(h_begin_date) h_begin_date from h_das.dbo.stream_risk_free_rates where year(h_end_date) = 9999 group by stream_no) b
 on a.stream_no = b.stream_no 
 */
-ALTER TABLE dbo.stream_risk_free_rates SET (SYSTEM_VERSIONING = OFF); 
-go
 
-ALTER TABLE dbo.stream_risk_free_rates DROP PERIOD FOR SYSTEM_TIME;
-go
-
-UPDATE dbo.stream_risk_free_rates SET SysStartTime = das.dbo.ToUTC(SysStartTime);
-go
-
-ALTER TABLE dbo.stream_risk_free_rates ADD PERIOD FOR SYSTEM_TIME(sysstartTime, sysendtime);
-go
-
-ALTER TABLE dbo.stream_risk_free_rates SET (SYSTEM_VERSIONING = ON (HISTORY_TABLE=history.stream_risk_free_rates, DATA_CONSISTENCY_CHECK=ON));
-go
 -------------------------------------------------------------------------------
 ALTER TABLE dbo.risk_rtg_transfer SET (SYSTEM_VERSIONING = OFF); 
 go
