@@ -1,4 +1,4 @@
-PROCEDURE Contra_Loss_Calc_Monthly(p_losses_k IN abob_tbl_losses.losses_k%type, p_prev_losses_k IN abob_tbl_losses.losses_k%type,
+ PROCEDURE Contra_Loss_Calc_Monthly(p_losses_k IN abob_tbl_losses.losses_k%type, p_prev_losses_k IN abob_tbl_losses.losses_k%type,
                                         p_mtm boolean, p_refi boolean,p_batch_mode boolean default false) IS
      
     cursor curr_losses_row is
