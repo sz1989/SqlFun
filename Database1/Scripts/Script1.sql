@@ -21,7 +21,7 @@ where user_id like 'agl\%') t
 
 select @d
 
-https://prod.liveshare.vsengsaas.visualstudio.com/join?5F63BA124CE54D5B889A876FB9BC99DD93BD 
-
+https://prod.liveshare.vsengsaas.visualstudio.com/join?2BA37D308F43CB2AB5CA67E340AC473DE31E
+https://prod.liveshare.vsengsaas.visualstudio.com/join?2BA37D308F43CB2AB5CA67E340AC473DE31E
 
 
