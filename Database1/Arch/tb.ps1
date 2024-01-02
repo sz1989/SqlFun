@@ -19,14 +19,3 @@ if ($srv.ServerType-eq $null) # if it managed to find a server
 } 
 $scripter = new-object ("$My.Scripter") $srv # create the scripter
 $scripter.Options.ToFileOnly = $true 
-
-
-# Happy New Year, all, 
-
-# I am writing to provide an update regarding Andy’s issue in the UAT last Thursday. I tried to replicate the issue in the DEV but was unable to reproduce it. 
-
-# After closely re-analyzing the code that is responsible for the Loss Monthly closing process this morning, and I will make another attempt to create a situation in DEV that might reproduce the issue. I will keep everyone informed about my progress as I continue to work on this.
-
-# Thank you for your attention to this matter.
-
-# Best regards.
