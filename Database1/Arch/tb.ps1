@@ -29,3 +29,6 @@ I suggest once the user clicks on the 'To Next Month' button, it should be immed
 
 Thanks,
 David Kao
+
+
+By disabling the button after the user clicks, we can easily solve this problem. It's a simple solution that will prevent any further issues down the line.
