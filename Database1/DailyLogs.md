@@ -8,6 +8,9 @@
         - Enable temporal table
 - C#
     - Create a test story to make sure 
+- Earning Calculator
+    Find out what does the app.config.deploy file do
+    Making the cpi code update is in the Ling's repo  11/9/23
 
 # What Broke or Got Weird
 - Circular reference on the InflationIndex
@@ -26,12 +29,16 @@
     await context.Database.EnsureDeletedAsync();
     await context.Database.EnsureCreatedAsync();
     ```
-
+# YAML
+- Sample
+    https://github.com/Humanizr/Humanizer/blob/main/azure-pipelines.yml
+    
 # Existing logic
 - GetDirty
 
 # EarningsCalculator
 - Adding an argument to skip the Exposure Calculation and not save the PolicyExposure and PolicyDebt
+- Run variable rate though web api cusiprate/queue
 
 # EarningsCalculator Service EndPoints that the AGS uses
 - 

@@ -1,0 +1,20 @@
+{
+  "FileAnalysis": {
+    "MaxFileSizeMB": 100,
+    "AllowedExtensions": [".txt", ".log", ".csv", ".json", ".xml", ".md"],
+    "BlockedExtensions": [".exe", ".dll", ".bat", ".cmd"],
+    "EnableDetailedLogging": false,
+    "DefaultOutputFormat": "Standard",
+    "Security": {
+      "AllowSystemFiles": false,
+      "AllowHiddenFiles": true,
+      "RestrictedPaths": ["C:\\Windows\\System32", "C:\\Program Files"]
+    }
+  },
+  "Logging": {
+    "LogLevel": "Information",
+    "EnableConsoleLogging": true,
+    "EnableFileLogging": false,
+    "LogFilePath": "fileanalysis.log"
+  }
+}
